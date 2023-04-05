@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>파일다운로드</title>
+	</head>
+	<body>
+		<h1>upload file 목록</h1>
+		<ul th:each="file: ${files}">
+			<li>
+				<span th:text="${file.fileName}"></span>
+				<a href="#" th:href="${'/download?uuid='+file.uuid+'&fileName='+file.fileName}">
+				<img th:src="${'/display?uuid='+file.uuid+'&fileName='+file.fileName}" alt="이미지 확인하기" width="300px">
+					[download]
+				</a>	
+			</li>
+		</ul>
+	</body>
+</html>
