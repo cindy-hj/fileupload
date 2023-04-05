@@ -42,7 +42,7 @@ public class MainController {
 		for(MultipartFile file : uploadfile) {
 			if(!file.isEmpty()) {
 				FileDto dto = new FileDto(UUID.randomUUID().toString(),
-						file.getOriginalFilename().replaceAll("[^ㄱ-ㅎㅏ-ㅣ가-힣a-zA-z0-9]", ""),
+						file.getOriginalFilename().replaceAll("[^ㄱ-ㅎㅏ-ㅣ가-힣a-zA-z0-9.]", ""),
 						file.getContentType());
 				list.add(dto);
 				
